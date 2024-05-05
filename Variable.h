@@ -30,7 +30,6 @@ class Variable {
         void nuevoTermino(Termino* t);
         bool getTermino(std::string nombreTermino);
         void fuzificar(float input);
-        //retorna el termino que tenga mayor cantidad de pertenencia para esta variable
 };
 
 #endif

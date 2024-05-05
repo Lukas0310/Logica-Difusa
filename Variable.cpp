@@ -88,13 +88,13 @@ void Variable::fuzificar(float input){
     por ultimo retorna el termino que haya tenido mayor pertenencia
     */
 
-    float fRef = 0.0;
+    //float fRef = 0.0;
     //Termino* ttemp = nullptr;
     for (int i=0;i<terminos.size();i++) {
         std::cout<<"Termino: "<<terminos[i]->getNombre();
-        float pert = terminos[i]->pertenenciaCF(input);
+        float pert = terminos[i]->calcularPertenencia(input);
         std::cout<<"   Pertenencia:  "<<pert<<std::endl;
-        terminos[i]->setAltura(pert);
+        terminos[i]->setPertenencia(pert);
     }
 };
 

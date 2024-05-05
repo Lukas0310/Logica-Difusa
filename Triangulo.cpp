@@ -6,9 +6,8 @@
 #include "Triangulo.h"
 #include "Termino.h"
 
-Triangulo::Triangulo(float h, std::string nombre, std::vector<std::string> coor) {
+Triangulo::Triangulo(std::string nombre, std::vector<std::string> coor) {
     setNombre(nombre);
-    setAltura(h);
     char tipo ='T';
     setTipo(tipo);
     setConjuntoFuzzy(coor);
@@ -32,7 +31,7 @@ void Triangulo::setConjuntoFuzzy(std::vector<std::string> coor) {
     setX3(atof(coor.at(2).c_str()));
 }
 
-float Triangulo::pertenenciaCF(float input){
+float Triangulo::calcularPertenencia(float input){
     float pert = 0;
     if (input <= xy1) {
         pert = 0;

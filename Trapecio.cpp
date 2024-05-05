@@ -6,9 +6,8 @@
 #include "Trapecio.h"
 #include "Termino.h"
 
-Trapecio::Trapecio(float h, std::string nombre, std::vector<std::string> coor) {
+Trapecio::Trapecio(std::string nombre, std::vector<std::string> coor) {
     setNombre(nombre);
-    setAltura(h);
     char tipo ='T';
     setTipo(tipo);
     setConjuntoFuzzy(coor);
@@ -34,17 +33,18 @@ void Trapecio::setConjuntoFuzzy(std::vector<std::string> coor) {
     setX1(atof(coor.at(0).c_str()));
     setX2(atof(coor.at(1).c_str()));
     setX3(atof(coor.at(2).c_str()));
+    setX4(atof(coor.at(3).c_str()));
 }
 
-float Trapecio::pertenenciaCF(float input){
+float Trapecio::calcularPertenencia(float input){
     float pert = 0;
-    if (input <= x1) {
+    if (input <= x1){
         pert = 0;
-    } else if (input >= x1 && input <= x2) {
+    } else if (input < x2){
         pert = (input-x1)/(x2-x1);
-    } else if (input >= x2 && input <=x3 ){
+    } else if (input >= x2 && input <= x3){
         pert = 1.0;
-    } else if (input >= x3 && input <=x4){
+    } else if (input < x4){
         pert = (x4-input)/(x4-x3);
     } else {
         pert = 0;
