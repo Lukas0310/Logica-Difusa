@@ -20,5 +20,5 @@ class Trapecio: public Termino {
         std::string getCoordenadas() override;
 };
 
-#endif TRAPECIO_H
+#endif
 

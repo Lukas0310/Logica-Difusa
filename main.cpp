@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include "Variable.h"
 #include "Triangulo.h"
 #include "Trapecio.h"
@@ -8,6 +9,7 @@
 //using namespace std;
 
 int main() {
+
 
     std::cout << "Hello world!" << std::endl;
     std::vector<std::string> c1 ={"0", "20","43"};
@@ -48,5 +50,3 @@ int main() {
     varPrueba.fuzificar(44.0);
     return 0;
 }
-
-

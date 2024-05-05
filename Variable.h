@@ -33,4 +33,4 @@ class Variable {
         //retorna el termino que tenga mayor cantidad de pertenencia para esta variable
 };
 
-#endif FL_VARIABLE_H
+#endif

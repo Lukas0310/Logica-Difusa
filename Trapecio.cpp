@@ -55,6 +55,3 @@ float Trapecio::pertenenciaCF(float input){
 std::string Trapecio::getCoordenadas() {
     return std::to_string(x1) + ", " + std::to_string(x2) + ", " + std::to_string(x3);
 };
-
-
-

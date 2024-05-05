@@ -19,4 +19,4 @@ class Triangulo: public Termino {
         std::string getCoordenadas() override;
 };
 
-#endif TRIANGULO_H
+#endif

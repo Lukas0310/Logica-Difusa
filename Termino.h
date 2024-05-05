@@ -21,8 +21,8 @@ class Termino {
         virtual std::string getCoordenadas() = 0;
         //este metodo esta implementado de manera diferente en cada uno de los tipos de conjunto
         virtual float pertenenciaCF(float input) = 0 ;
-        //este metodo hace el defuzzificacion y fuzzificacion porque recibe el input, lo revisa como pertenencia al termino y retorna qué tanto pertenece al término
+        //este metodo hace el defuzzificacion y fuzzificacion porque recibe el input, lo revisa como pertenencia al termino y retorna quÃ© tanto pertenece al tÃ©rmino
         //ej. input es 4 retorna pertenencia 80%
 };
 
-#endif TERMINO_H
+#endif
