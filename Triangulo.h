@@ -17,6 +17,7 @@ class Triangulo: public Termino {
         void setConjuntoFuzzy(std::vector<std::string> c) override;
         float calcularPertenencia(float i) override;
         std::string getCoordenadas() override;
+        bool estaDentroDelIntervalo(float i) override;
 };
 
 #endif

@@ -11,6 +11,7 @@ Trapecio::Trapecio(std::string nombre, std::vector<std::string> coor) {
     char tipo ='T';
     setTipo(tipo);
     setConjuntoFuzzy(coor);
+    setAltura(0);
 }
 
 void Trapecio::setX1(float x1) {
@@ -55,3 +56,11 @@ float Trapecio::calcularPertenencia(float input){
 std::string Trapecio::getCoordenadas() {
     return std::to_string(x1) + ", " + std::to_string(x2) + ", " + std::to_string(x3);
 };
+
+bool Trapecio::estaDentroDelIntervalo(float input) {
+    if (input >= x1 && input <= x4) {
+        return true;
+    } else {
+        return false;
+    }
+}

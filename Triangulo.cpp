@@ -11,6 +11,7 @@ Triangulo::Triangulo(std::string nombre, std::vector<std::string> coor) {
     char tipo ='T';
     setTipo(tipo);
     setConjuntoFuzzy(coor);
+    setAltura(0);
 }
 
 void Triangulo::setX1(float x1) {
@@ -51,4 +52,11 @@ std::string Triangulo::getCoordenadas() {
     return std::to_string(xy1) + ", " + std::to_string(xy2) + ", " + std::to_string(xy3);
 };
 
+bool Triangulo::estaDentroDelIntervalo(float input) {
+    if (input >= xy1 && input <= xy3) {
+        return true;
+    } else {
+        return false;
+    }
+}
 

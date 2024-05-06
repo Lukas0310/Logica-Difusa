@@ -19,6 +19,10 @@ void Termino::setTipo(char t) {
     this->tipo=t;
 }
 
+void Termino::setAltura(float a) {
+    this->altura=a;
+}
+
 std::string Termino::getNombre() {
     return nombreT;
 }
@@ -31,3 +35,6 @@ char Termino::getTipo() {
     return tipo;
 }
 
+float Termino::getAltura() {
+    return altura;
+}
