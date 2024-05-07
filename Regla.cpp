@@ -3,6 +3,12 @@
 #include <map>
 #include "Regla.h"
 
+Regla::Regla(std::vector<std::tuple<std::string, std::string>> p, std::string c, float v) {
+    premisas = p;
+    consecuencia = c;
+    valorInferencia = v;
+}
+
 void Regla::setPremisas(std::vector<std::tuple<std::string, std::string>> p) {
     premisas = p;
 }

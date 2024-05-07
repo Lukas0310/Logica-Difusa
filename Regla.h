@@ -20,6 +20,7 @@ class Regla {
         std::string consecuencia;
 
     public:
+        Regla(std::vector<std::tuple<std::string, std::string>> p, std::string c, float v);
         void setPremisas(std::vector<std::tuple<std::string, std::string>> p);
         void setConsecuencia(std::string c);
         void setValorInferencia(float v);
