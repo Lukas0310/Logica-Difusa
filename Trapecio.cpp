@@ -8,7 +8,7 @@
 
 Trapecio::Trapecio(std::string nombre, std::vector<std::string> coor) {
     setNombre(nombre);
-    char tipo ='T';
+    char tipo ='R';
     setTipo(tipo);
     setConjuntoFuzzy(coor);
     setAltura(0);
@@ -37,6 +37,11 @@ void Trapecio::setConjuntoFuzzy(std::vector<std::string> coor) {
     setX4(atof(coor.at(3).c_str()));
 }
 
+/* La función de calcular pertenencia recibe un valor input 
+    dentro del rango de valores posibles y usa las formulas de las 
+    diapositivas para determinar de 0 a 1 qué tanto pertenece ese valor al
+    conjunto fuzzy trapecio
+*/
 float Trapecio::calcularPertenencia(float input){
     float pert = 0;
     if (input <= x1){
@@ -51,11 +56,11 @@ float Trapecio::calcularPertenencia(float input){
         pert = 0;
     }
     return pert;
-};
+}; 
 
 std::string Trapecio::getCoordenadas() {
-    return std::to_string(x1) + ", " + std::to_string(x2) + ", " + std::to_string(x3);
-};
+    return std::to_string(x1) + ", " + std::to_string(x2) + ", " + std::to_string(x3) + ", " + std::to_string(x4);
+}; //imprimir coordenadas
 
 bool Trapecio::estaDentroDelIntervalo(float input) {
     if (input >= x1 && input <= x4) {
