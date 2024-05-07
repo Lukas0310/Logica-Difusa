@@ -103,4 +103,4 @@ float MotorInferencia::defuzzificar(float paso) {
     cout<<"--- Metodo del centroide: "<<endl;
     cout<<"--- Valor de salida: "<<numerador / denominador<<endl;
     return numerador / denominador;
-}        
+}
