@@ -6,20 +6,18 @@
 
 using namespace std;
 
-Variable::Variable(std::string n, std::string d, std::vector<Termino*> t, float minval, float maxval){
+Variable::Variable(std::string n, std::vector<Termino*> t, float minval, float maxval){
     nombre=n;
-    descripcion=d;
     terminos=t;
     minimo=minval;
     maximo=maxval;
 };
+//constructor basico
+//deberia implementar un destructor que elimine todos los termino* del vector
 
+//setters y getters
 void Variable::setNombre(std::string n){
     nombre=n;
-};
-
-void Variable::setDescripcion(std::string d){
-    descripcion=d;
 };
 
 void Variable::setTerminos(const std::vector<Termino*>& ts){
@@ -40,10 +38,6 @@ void Variable::setValor(float v){
 
 std::string Variable::getNombre(){
     return nombre;
-};
-
-std::string Variable::getDescripcion(){
-    return descripcion;
 };
 
 std::vector<Termino*> Variable::getTerminos(){
@@ -75,6 +69,7 @@ bool Variable::getTermino(std::string nombreTermino){
     return false;
 };
 
+//fuzzificar es importante porque debe poder calcular el valor de pertenencia del input recibido para CADA término que haya
 void Variable::fuzificar(float input){
     cout<<"Fuzificando variable: "<<nombre<<endl;
     for (int i=0;i<terminos.size();i++) {
