@@ -22,7 +22,7 @@ class Regla {
         void setPremisas(std::vector <std::tuple <std::string, std::string> > p);
         void setConsecuencia(std::string c);
         void setValorInferencia(float v);
-        std::vector<std::tuple<std::string, std::string>> getPremisas();
+        std::vector <std::tuple <std::string, std::string> > getPremisas();
         std::string getConsecuencia();
         float getValorInferencia();
         void agregarPremisa(std::tuple <std::string, std::string> p);

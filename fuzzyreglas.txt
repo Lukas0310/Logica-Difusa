@@ -1,0 +1,75 @@
+Sabor, Muy feo
+Espera, Muy largo
+Baja, 0.0
+Sabor, Muy feo
+Espera, Corto
+Normal, 10.0
+Sabor, Muy feo
+Espera, Muy corto
+Normal, 15.5
+Sabor, Muy feo
+Espera, Medio
+Baja, 9.0
+Sabor, Muy feo
+Espera, Largo
+Baja, 2.5
+Sabor, Feo
+Espera, Muy corto
+Normal, 18.5
+Sabor, Feo
+Espera, Corto
+Normal, 16.0
+Sabor, Feo
+Espera, Medio
+Baja, 9.5
+Sabor, Feo
+Espera, Largo
+Baja, 10.0
+Sabor, Feo
+Espera, Muy largo
+Baja, 9.0
+Sabor, Normal
+Espera, Muy corto
+Alta, 55.5
+Sabor, Normal
+Espera, Corto
+Normal, 20.5
+Sabor, Normal
+Espera, Medio
+Normal, 18.5
+Sabor, Normal
+Espera, Largo
+Normal, 16.5
+Sabor, Normal
+Espera, Muy largo
+Normal, 14.0
+Sabor, Rico
+Espera, Muy corto
+Alta, 80.0
+Sabor, Rico
+Espera, Corto
+Alta, 70.0
+Sabor, Rico
+Espera, Medio
+Alta, 60.0
+Sabor, Rico
+Espera, Largo
+Alta, 40.0
+Sabor, Rico
+Espera, Muy largo
+Baja, 10.0
+Sabor, Muy rico
+Espera, Muy corto
+Alta, 100.0
+Sabor, Muy rico
+Espera, Corto
+Alta, 90.0
+Sabor, Muy rico
+Espera, Medio
+Alta, 75.5
+Sabor, Rico
+Espera, Largo
+Alta, 25.5
+Sabor, Muy rico
+Espera, Muy largo
+Normal, 25.5
