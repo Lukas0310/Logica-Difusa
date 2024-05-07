@@ -1,19 +1,14 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
-#include "Variable.h"
 #include "Triangulo.h"
 #include "Trapecio.h"
-#include "Regla.h"
 #include "MotorInferencia.h"
 std::vector<Variable*> variables;
 using namespace std;
 
+
 int main() {
 
     //declaracion de variables del ejemplo de las diapositivas
-    std::string nVar1 = "Sabor";
+    string nVar1 = "Sabor";
     float minValVar1 = 0;
     float maxValVar1 = 100;
     std::string nMR = "Muy rico";
@@ -31,7 +26,7 @@ int main() {
     Termino* ptrN = new Triangulo(nNormal, cNormal);
     Termino* ptrF = new Triangulo(nF, cF);
     Termino* ptrMF = new Triangulo(nMF, cMF);
-    std::vector<Termino*> terminosLing;
+    vector<Termino*> terminosLing;
     terminosLing.push_back(ptrMR);
     terminosLing.push_back(ptrR);
     terminosLing.push_back(ptrN);
@@ -57,7 +52,7 @@ int main() {
     Termino* ptrM = new Triangulo(nM, cM);
     Termino* ptrC = new Triangulo(nC, cC);
     Termino* ptrMC = new Triangulo(nMC, cMC);
-    std::vector<Termino*> terminosLing2;
+    vector<Termino*> terminosLing2;
     terminosLing2.push_back(ptrML);
     terminosLing2.push_back(ptrL);
     terminosLing2.push_back(ptrM);
@@ -70,7 +65,7 @@ int main() {
     
 
    //declaracion de reglas
-    std::vector<Regla*> reglas;
+    vector <Regla*> reglas;
 
     std::vector<std::tuple<std::string, std::string>> premisas1;
     premisas1.push_back(std::make_tuple("Sabor", "Muy feo"));
@@ -224,19 +219,19 @@ int main() {
     reglas.push_back(ptrRegla25);
 
     //declaracion de la variable de salida
-    std::string nVar3 = "Calidad";
+    string nVar3 = "Calidad";
     float minValVar3 = 0;
     float maxValVar3 = 100;
-    std::string nBaja = "Baja";
-    std::vector<std::string> cBaja = {"0", "5", "10"};
-    std::string sNormal = "Normal";
-    std::vector<std::string> cNormal2 = {"8", "15", "27"};
-    std::string nAlta = "Alta";
-    std::vector<std::string> cAlta = {"20", "30", "90", "100"};
+    string nBaja = "Baja";
+    vector<string> cBaja = {"0", "5", "10"};
+    string sNormal = "Normal";
+    vector<string> cNormal2 = {"8", "15", "27"};
+    string nAlta = "Alta";
+    vector<string> cAlta = {"20", "30", "90", "100"};
     Termino* ptrBaja =  new Triangulo(nBaja, cBaja);
     Termino* ptrNormal = new Triangulo(sNormal, cNormal2);
     Termino* ptrAlta = new Trapecio(nAlta, cAlta);
-    std::vector<Termino*> terminosLing3;
+    vector<Termino*> terminosLing3;
     terminosLing3.push_back(ptrBaja);
     terminosLing3.push_back(ptrNormal);
     terminosLing3.push_back(ptrAlta);
@@ -270,7 +265,6 @@ int main() {
     //defuzificacion
     float paso = 0.001;
     float calidad = motor->defuzzificar(paso);
-
 
     return 0;
 }

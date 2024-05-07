@@ -1,9 +1,4 @@
-#include <string>
-#include <vector>
-#include "Termino.h"
 #include "Variable.h"
-#include <iostream>
-
 using namespace std;
 
 Variable::Variable(std::string n, std::vector<Termino*> t, float minval, float maxval){
@@ -79,5 +74,3 @@ void Variable::fuzificar(float input){
         terminos[i]->setPertenencia(pert);
     }
 };
-
-

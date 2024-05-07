@@ -1,11 +1,4 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <sstream>
-#include <cstdlib>
-#include "Trapecio.h"
 #include "Termino.h"
-
 
 void Termino::setNombre(std::string n) {
     this->nombreT=n;

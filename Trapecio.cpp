@@ -1,10 +1,4 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <sstream>
-#include <cstdlib>
 #include "Trapecio.h"
-#include "Termino.h"
 
 Trapecio::Trapecio(std::string nombre, std::vector<std::string> coor) {
     setNombre(nombre);

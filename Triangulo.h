@@ -1,8 +1,5 @@
-#ifndef TRIANGULO_H
-#define TRIANGULO_H
+#pragma once
 
-#include <string>
-#include <vector>
 #include "Termino.h"
 
 class Triangulo: public Termino {
@@ -27,5 +24,3 @@ class Triangulo: public Termino {
         std::string getCoordenadas() override;
         bool estaDentroDelIntervalo(float i) override;
 };
-
-#endif

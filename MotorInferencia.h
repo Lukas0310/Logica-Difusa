@@ -3,17 +3,12 @@ Clase que realiza la inferencia difusa.
 las reglas estan compuestas de dos entradas y una salida
 */
 
-#ifndef MOTORINFERENCIA_H
-#define MOTORINFERENCIA_H
+#pragma once
 
-#include <tuple>
-#include <vector>
-#include <string>
-#include "Variable.h"
 #include "Regla.h"
 
-class MotorInferencia {
-
+class MotorInferencia 
+{
     private:
         std::vector<Regla*> reglas;
         std::vector<Variable*> variables;
@@ -35,9 +30,4 @@ class MotorInferencia {
 
         //obtiene el mayor u de un conjunto de terminos
         float getMayorU(float x);
-
-
 };
-
-
-#endif
