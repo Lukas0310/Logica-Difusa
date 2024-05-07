@@ -1,0 +1,26 @@
+3
+Sabor
+0
+100
+5
+Muy Rico, 80, 100, 100
+Rico, 60, 80, 100
+Normal, 40, 60, 80
+Feo, 20, 40, 60
+Muy Feo, 0, 20, 40
+Tiempo de Espera
+0
+60
+5
+Muy corto, 0, 0, 5
+Corto, 5, 10, 17
+Mediano, 15, 22, 27
+Largo, 27, 30, 45
+Muy largo, 35, 50, 60, 60
+Calidad
+0
+100
+3
+Baja, 0, 5, 10
+Normal, 8, 15, 27
+Alta, 20, 30, 90, 100

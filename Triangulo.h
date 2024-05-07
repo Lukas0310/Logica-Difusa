@@ -14,8 +14,11 @@ class Triangulo: public Termino {
     public:
         Triangulo(std::string nombre, std::vector<std::string> coor);
         void setX1(float x1);
+        float getX1();
         void setX2(float x2);
+        float getX2();
         void setX3(float x3);
+        float getX3();
         //estos son los metodos que se adaptan a cada tipo de conjunto
         void setConjuntoFuzzy(std::vector<std::string> c) override;
         //guarda las coordenadas leyendo un vector de strings que tienen las x

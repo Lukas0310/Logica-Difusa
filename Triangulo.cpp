@@ -11,15 +11,24 @@ Triangulo::Triangulo(std::string nombre, std::vector <std::string> coor) {
 void Triangulo::setX1(float x1) {
     this->xy1 = x1;
 }
-
+float Triangulo::getX1()
+{
+    return this->xy1;
+}
 void Triangulo::setX2(float x2) {
     this->xy2 = x2;
 }
-
+float Triangulo::getX2()
+{
+    return this->xy2;
+}
 void Triangulo::setX3(float x3) {
     this->xy3 = x3;
 }
-
+float Triangulo::getX3()
+{
+    return this->xy3;
+}
 void Triangulo::setConjuntoFuzzy(std::vector<std::string> coor) {
     setX1(atof(coor.at(0).c_str()));
     setX2(atof(coor.at(1).c_str()));
