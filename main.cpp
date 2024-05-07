@@ -8,7 +8,7 @@
 #include "Regla.h"
 #include "MotorInferencia.h"
 std::vector<Variable*> variables;
-//using namespace std;
+using namespace std;
 
 int main() {
 
@@ -16,7 +16,7 @@ int main() {
     std::string nVar1 = "Sabor";
     float minValVar1 = 0;
     float maxValVar1 = 100;
-    std::string nMR = "Muy Rico";
+    std::string nMR = "Muy rico";
     std::vector<std::string> cMR = {"80", "100", "100"};
     std::string nR = "Rico";
     std::vector<std::string> cR = {"60", "80", "100"};
@@ -24,7 +24,7 @@ int main() {
     std::vector<std::string> cNormal = {"40", "60", "80"};
     std::string nF = "Feo";
     std::vector<std::string> cF = {"20", "40", "60"};
-    std::string nMF = "Muy Feo";
+    std::string nMF = "Muy feo";
     std::vector<std::string> cMF = {"0", "20", "40"};
     Termino* ptrMR =  new Triangulo(nMR, cMR);
     Termino* ptrR = new Triangulo(nR, cR);
@@ -39,18 +39,18 @@ int main() {
     terminosLing.push_back(ptrMF);
     Variable* ptrSabor = new Variable(nVar1, terminosLing, minValVar1, maxValVar1);
 
-    std::string nVar2 = "Tiempo de Espera";
+    std::string nVar2 = "Tiempo de espera";
     float minValVar2 = 0;
     float maxValVar2 = 60;
-    std::string nMC = "Muy Corto";
+    std::string nMC = "Muy corto";
     std::vector<std::string> cMC = {"0", "0", "5"};
     std::string nC = "Corto";
     std::vector<std::string> cC = {"5", "10", "17"};
-    std::string nM = "Mediano";
+    std::string nM = "Medio";
     std::vector<std::string> cM = {"15", "22", "27"};
-    std::string nL = "largo";
+    std::string nL = "Largo";
     std::vector<std::string> cL = {"27", "30", "45"};
-    std::string nML = "Muy Largo";
+    std::string nML = "Muy largo";
     std::vector<std::string> cML = {"35", "50", "60", "60"};
     Termino* ptrML =  new Trapecio(nML, cML);
     Termino* ptrL = new Triangulo(nL, cL);
@@ -74,128 +74,128 @@ int main() {
 
     std::vector<std::tuple<std::string, std::string>> premisas1;
     premisas1.push_back(std::make_tuple("Sabor", "Muy feo"));
-    premisas1.push_back(std::make_tuple("Espera", "Muy largo"));
-    Regla* ptrRegla1 = new Regla(premisas1, "baja", 0.0);
+    premisas1.push_back(std::make_tuple("Tiempo de espera", "Muy largo"));
+    Regla* ptrRegla1 = new Regla(premisas1, "Baja", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas2;
     premisas2.push_back(std::make_tuple("Sabor", "Muy feo"));
-    premisas2.push_back(std::make_tuple("Espera", "Corto"));
-    Regla* ptrRegla2 = new Regla(premisas2, "normal", 0.0);
+    premisas2.push_back(std::make_tuple("Tiempo de espera", "Corto"));
+    Regla* ptrRegla2 = new Regla(premisas2, "Normal", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas3;
     premisas3.push_back(std::make_tuple("Sabor", "Muy feo"));
-    premisas3.push_back(std::make_tuple("Espera", "Muy corto"));
-    Regla* ptrRegla3 = new Regla(premisas3, "normal", 0.0);
+    premisas3.push_back(std::make_tuple("Tiempo de espera", "Muy corto"));
+    Regla* ptrRegla3 = new Regla(premisas3, "Normal", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas4;
     premisas4.push_back(std::make_tuple("Sabor", "Muy feo"));
-    premisas4.push_back(std::make_tuple("Espera", "Medio"));
-    Regla* ptrRegla4 = new Regla(premisas4, "baja", 0.0);
+    premisas4.push_back(std::make_tuple("Tiempo de espera", "Medio"));
+    Regla* ptrRegla4 = new Regla(premisas4, "Baja", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas5;
     premisas5.push_back(std::make_tuple("Sabor", "Muy feo"));
-    premisas5.push_back(std::make_tuple("Espera", "Largo"));
-    Regla* ptrRegla5 = new Regla(premisas5, "baja", 0.0);
+    premisas5.push_back(std::make_tuple("Tiempo de espera", "Largo"));
+    Regla* ptrRegla5 = new Regla(premisas5, "Baja", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas6;
     premisas6.push_back(std::make_tuple("Sabor", "Feo"));
-    premisas6.push_back(std::make_tuple("Espera", "Muy corto"));
-    Regla* ptrRegla6 = new Regla(premisas6, "normal", 0.0);
+    premisas6.push_back(std::make_tuple("Tiempo de espera", "Muy corto"));
+    Regla* ptrRegla6 = new Regla(premisas6, "Normal", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas7;
     premisas7.push_back(std::make_tuple("Sabor", "Feo"));
-    premisas7.push_back(std::make_tuple("Espera", "Corto"));
-    Regla* ptrRegla7 = new Regla(premisas7, "normal", 0.0);
+    premisas7.push_back(std::make_tuple("Tiempo de espera", "Corto"));
+    Regla* ptrRegla7 = new Regla(premisas7, "Normal", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas8;
     premisas8.push_back(std::make_tuple("Sabor", "Feo"));
-    premisas8.push_back(std::make_tuple("Espera", "Medio"));
-    Regla* ptrRegla8 = new Regla(premisas8, "baja", 0.0);
+    premisas8.push_back(std::make_tuple("Tiempo de espera", "Medio"));
+    Regla* ptrRegla8 = new Regla(premisas8, "Baja", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas9;
     premisas9.push_back(std::make_tuple("Sabor", "Feo"));
-    premisas9.push_back(std::make_tuple("Espera", "Largo"));
-    Regla* ptrRegla9 = new Regla(premisas9, "baja", 0.0);
+    premisas9.push_back(std::make_tuple("Tiempo de espera", "Largo"));
+    Regla* ptrRegla9 = new Regla(premisas9, "Baja", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas10;
     premisas10.push_back(std::make_tuple("Sabor", "Feo"));
-    premisas10.push_back(std::make_tuple("Espera", "Muy largo"));
-    Regla* ptrRegla10 = new Regla(premisas10, "baja", 0.0);
+    premisas10.push_back(std::make_tuple("Tiempo de espera", "Muy largo"));
+    Regla* ptrRegla10 = new Regla(premisas10, "Baja", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas11;
     premisas11.push_back(std::make_tuple("Sabor", "Normal"));
-    premisas11.push_back(std::make_tuple("Espera", "Muy corto"));
-    Regla* ptrRegla11 = new Regla(premisas11, "alta", 0.0);
+    premisas11.push_back(std::make_tuple("Tiempo de espera", "Muy corto"));
+    Regla* ptrRegla11 = new Regla(premisas11, "Alta", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas12;
     premisas12.push_back(std::make_tuple("Sabor", "Normal"));
-    premisas12.push_back(std::make_tuple("Espera", "Corto"));
-    Regla* ptrRegla12 = new Regla(premisas12, "normal", 0.0);
+    premisas12.push_back(std::make_tuple("Tiempo de espera", "Corto"));
+    Regla* ptrRegla12 = new Regla(premisas12, "Normal", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas13;
     premisas13.push_back(std::make_tuple("Sabor", "Normal"));
-    premisas13.push_back(std::make_tuple("Espera", "Medio"));
-    Regla* ptrRegla13 = new Regla(premisas13, "normal", 0.0);
+    premisas13.push_back(std::make_tuple("Tiempo de espera", "Medio"));
+    Regla* ptrRegla13 = new Regla(premisas13, "Normal", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas14;
     premisas14.push_back(std::make_tuple("Sabor", "Normal"));
-    premisas14.push_back(std::make_tuple("Espera", "Alta"));
-    Regla* ptrRegla14 = new Regla(premisas14, "normal", 0.0);
+    premisas14.push_back(std::make_tuple("Tiempo de espera", "Largo"));
+    Regla* ptrRegla14 = new Regla(premisas14, "Normal", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas15;
     premisas15.push_back(std::make_tuple("Sabor", "Normal"));
-    premisas15.push_back(std::make_tuple("Espera", "Muy alto"));
-    Regla* ptrRegla15 = new Regla(premisas15, "baja", 0.0);
+    premisas15.push_back(std::make_tuple("Tiempo de espera", "Muy largo"));
+    Regla* ptrRegla15 = new Regla(premisas15, "Baja", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas16;
     premisas16.push_back(std::make_tuple("Sabor", "Rico"));
-    premisas16.push_back(std::make_tuple("Espera", "Muy corto"));
-    Regla* ptrRegla16 = new Regla(premisas16, "alta", 0.0);
+    premisas16.push_back(std::make_tuple("Tiempo de espera", "Muy corto"));
+    Regla* ptrRegla16 = new Regla(premisas16, "Alta", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas17;
     premisas17.push_back(std::make_tuple("Sabor", "Rico"));
-    premisas17.push_back(std::make_tuple("Espera", "Corto"));
-    Regla* ptrRegla17 = new Regla(premisas17, "alta", 0.0);
+    premisas17.push_back(std::make_tuple("Tiempo de espera", "Corto"));
+    Regla* ptrRegla17 = new Regla(premisas17, "Alta", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas18;
     premisas18.push_back(std::make_tuple("Sabor", "Rico"));
-    premisas18.push_back(std::make_tuple("Espera", "Medio"));
-    Regla* ptrRegla18 = new Regla(premisas18, "alta", 0.0);
+    premisas18.push_back(std::make_tuple("Tiempo de espera", "Medio"));
+    Regla* ptrRegla18 = new Regla(premisas18, "Alta", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas19;
     premisas19.push_back(std::make_tuple("Sabor", "Rico"));
-    premisas19.push_back(std::make_tuple("Espera", "Alta"));
-    Regla* ptrRegla19 = new Regla(premisas19, "normal", 0.0);
+    premisas19.push_back(std::make_tuple("Tiempo de espera", "Largo"));
+    Regla* ptrRegla19 = new Regla(premisas19, "Normal", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas20;
     premisas20.push_back(std::make_tuple("Sabor", "Rico"));
-    premisas20.push_back(std::make_tuple("Espera", "Muy alta"));
-    Regla* ptrRegla20 = new Regla(premisas20, "baja", 0.0);
+    premisas20.push_back(std::make_tuple("Tiempo de espera", "Muy largo"));
+    Regla* ptrRegla20 = new Regla(premisas20, "Baja", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas21;
     premisas21.push_back(std::make_tuple("Sabor", "Muy rico"));
-    premisas21.push_back(std::make_tuple("Espera", "Muy corto"));
-    Regla* ptrRegla21 = new Regla(premisas21, "alta", 0.0);
+    premisas21.push_back(std::make_tuple("Tiempo de espera", "Muy corto"));
+    Regla* ptrRegla21 = new Regla(premisas21, "Alta", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas22;
     premisas22.push_back(std::make_tuple("Sabor", "Muy rico"));
-    premisas22.push_back(std::make_tuple("Espera", "Corto"));
-    Regla* ptrRegla22 = new Regla(premisas22, "alta", 0.0);
+    premisas22.push_back(std::make_tuple("Tiempo de espera", "Corto"));
+    Regla* ptrRegla22 = new Regla(premisas22, "Alta", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas23;
     premisas23.push_back(std::make_tuple("Sabor", "Muy rico"));
-    premisas23.push_back(std::make_tuple("Espera", "Medio"));
-    Regla* ptrRegla23 = new Regla(premisas23, "alta", 0.0);
+    premisas23.push_back(std::make_tuple("Tiempo de espera", "Medio"));
+    Regla* ptrRegla23 = new Regla(premisas23, "Alta", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas24;
     premisas24.push_back(std::make_tuple("Sabor", "Muy rico"));
-    premisas24.push_back(std::make_tuple("Espera", "Larga"));
-    Regla* ptrRegla24 = new Regla(premisas24, "normal", 0.0);
+    premisas24.push_back(std::make_tuple("Tiempo de espera", "Largo"));
+    Regla* ptrRegla24 = new Regla(premisas24, "Normal", 0.0);
 
     std::vector<std::tuple<std::string, std::string>> premisas25;
     premisas25.push_back(std::make_tuple("Sabor", "Muy rico"));
-    premisas25.push_back(std::make_tuple("Espera", "Muy larga"));
-    Regla* ptrRegla25 = new Regla(premisas25, "normal", 0.0);
+    premisas25.push_back(std::make_tuple("Tiempo de espera", "Muy largo"));
+    Regla* ptrRegla25 = new Regla(premisas25, "Normal", 0.0);
 
     reglas.push_back(ptrRegla1);
     reglas.push_back(ptrRegla2);
@@ -246,6 +246,7 @@ int main() {
     float sabor = 75;
     float tiempoEspera = 8;
 
+    cout<<"\n\n---------- Iniciando fusificacion ----------\n"<<endl;
     //fusificacion para sabor
     for (int i = 0; i < variables.size(); i++) {
         if (variables[i]->getNombre() == "Sabor") {
@@ -255,7 +256,7 @@ int main() {
 
     //fusificacion para tiempo de espera
     for (int i = 0; i < variables.size(); i++) {
-        if (variables[i]->getNombre() == "Tiempo de Espera") {
+        if (variables[i]->getNombre() == "Tiempo de espera") {
             variables[i]->fuzificar(tiempoEspera);
         }
     }
@@ -267,7 +268,7 @@ int main() {
     motor->inferir();
 
     //defuzificacion
-    float paso = 0.01;
+    float paso = 0.001;
     float calidad = motor->defuzzificar(paso);
 
 

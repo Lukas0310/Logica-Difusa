@@ -34,8 +34,15 @@ void MotorInferencia::setValoresInferencia() {
                 }
             }
         }
-        cout<<"Estableciendo valor de inferencia: "<<reglas[i]->getValorInferencia()<<" -> "<<reglas[i]->getConsecuencia()<<endl;
         reglas[i]->setValorInferencia(minimo);
+        cout<<"--- Estableciendo valor de inferencia: (";
+        for (int j = 0; j < reglas[i]->getPremisas().size(); j++) {
+            cout<<std::get<1>(reglas[i]->getPremisas()[j])<<" ";
+            if(j < reglas[i]->getPremisas().size()-1){
+                cout<<"& ";
+            }
+        }
+        cout<<"-> "<<reglas[i]->getConsecuencia()<<") <--> ("<<reglas[i]->getValorInferencia()<<" -> "<<reglas[i]->getConsecuencia()<<")"<<endl;
     }
 }
 
@@ -46,7 +53,7 @@ Si en las acciones ya se establecio el punto de corte y se encuentra un nuevo va
 para esa accion, se elige el valor mas alto.
 */
 void MotorInferencia::inferir() {
-    cout<<"----- Iniciando Inferencia: -----"<<endl;
+    cout<<"\n\n---------- Iniciando Inferencia: ----------\n"<<endl;
     setValoresInferencia();
     for (int i = 0; i < reglas.size(); i++) {
         float valorInferencia = reglas[i]->getValorInferencia();
@@ -54,7 +61,7 @@ void MotorInferencia::inferir() {
         for (int j = 0; j < salida->getTerminos().size(); j++) {
             if (salida->getTerminos()[j]->getNombre() == nombreConsecuente) {
                 if (salida->getTerminos()[j]->getAltura() < valorInferencia) {
-                    cout<<"Estableciendo altura en termino de salida: "<<salida->getTerminos()[j]->getNombre()<<" = "<<valorInferencia<<endl;
+                    cout<<"--- Estableciendo altura en termino de salida: "<<salida->getTerminos()[j]->getNombre()<<" = "<<valorInferencia<<endl;
                     salida->getTerminos()[j]->setAltura(valorInferencia);
                 }
             }
@@ -81,13 +88,14 @@ metodo para realizar la defuzzificacion.
 Utiliza el metodo del centroide para obtener el valor de salida.
 */
 float MotorInferencia::defuzzificar(float paso) {
-    cout<<"----- Iniciando Defuzzificacion: -----"<<endl;
+    cout<<"\n\n---------- Iniciando Defuzzificacion: ----------\n"<<endl;
     float numerador = 0;
     float denominador = 0;
-    for (int i = salida->getMinimo(); i <= salida->getMaximo(); i += paso) {
+    for (float i = salida->getMinimo(); i <= salida->getMaximo(); i += paso) {
         numerador += i * getMayorU(i);
         denominador += getMayorU(i);
     }
-    cout<<"Valor de salida: "<<numerador / denominador<<endl;
+    cout<<"--- Metodo del centroide: "<<endl;
+    cout<<"--- Valor de salida: "<<numerador / denominador<<endl;
     return numerador / denominador;
 }        

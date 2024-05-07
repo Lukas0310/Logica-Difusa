@@ -71,11 +71,11 @@ bool Variable::getTermino(std::string nombreTermino){
 
 //fuzzificar es importante porque debe poder calcular el valor de pertenencia del input recibido para CADA término que haya
 void Variable::fuzificar(float input){
-    cout<<"Fuzificando variable: "<<nombre<<endl;
+    cout<<"--- Fuzificando variable: "<<nombre<<endl;
     for (int i=0;i<terminos.size();i++) {
-        std::cout<<"Termino: "<<terminos[i]->getNombre()<<std::endl;
+        std::cout<<"--- Termino: "<<terminos[i]->getNombre()<<std::endl;
         float pert = terminos[i]->calcularPertenencia(input);
-        std::cout<<"   Pertenencia:  "<<pert<<std::endl;
+        std::cout<<"--- Pertenencia:  "<<pert<<std::endl;
         terminos[i]->setPertenencia(pert);
     }
 };
