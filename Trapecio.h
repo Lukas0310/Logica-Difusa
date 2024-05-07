@@ -1,8 +1,5 @@
-#ifndef TRAPECIO_H
-#define TRAPECIO_H
+#pragma once
 
-#include <string>
-#include <vector>
 #include "Termino.h"
 
 class Trapecio: public Termino {
@@ -27,6 +24,3 @@ class Trapecio: public Termino {
         std::string getCoordenadas() override;
         bool estaDentroDelIntervalo(float i) override;
 };
-
-#endif
-

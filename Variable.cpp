@@ -1,10 +1,4 @@
-#include <string>
-#include <vector>
-#include "Termino.h"
 #include "Variable.h"
-#include <iostream>
-
-using namespace std;
 
 Variable::Variable(std::string n, std::vector<Termino*> t, float minval, float maxval){
     nombre=n;
@@ -71,13 +65,11 @@ bool Variable::getTermino(std::string nombreTermino){
 
 //fuzzificar es importante porque debe poder calcular el valor de pertenencia del input recibido para CADA término que haya
 void Variable::fuzificar(float input){
-    cout<<"Fuzificando variable: "<<nombre<<endl;
+    std::cout << "Fuzificando variable: " << nombre << std::endl;
     for (int i=0;i<terminos.size();i++) {
-        std::cout<<"Termino: "<<terminos[i]->getNombre()<<std::endl;
+        std::cout << "Termino: " << terminos[i]->getNombre() << std::endl;
         float pert = terminos[i]->calcularPertenencia(input);
-        std::cout<<"   Pertenencia:  "<<pert<<std::endl;
+        std::cout << "   Pertenencia:  " << pert << std::endl;
         terminos[i]->setPertenencia(pert);
     }
 };
-
-

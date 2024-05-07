@@ -1,12 +1,6 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <sstream>
-#include <cstdlib>
 #include "Triangulo.h"
-#include "Termino.h"
 
-Triangulo::Triangulo(std::string nombre, std::vector<std::string> coor) {
+Triangulo::Triangulo(std::string nombre, std::vector <std::string> coor) {
     setNombre(nombre);
     char tipo ='T';
     setTipo(tipo);
@@ -15,15 +9,15 @@ Triangulo::Triangulo(std::string nombre, std::vector<std::string> coor) {
 } //en el constructor automaticamente se pone que es tipo T de triangulo
 
 void Triangulo::setX1(float x1) {
-    this->xy1=x1;
+    this->xy1 = x1;
 }
 
 void Triangulo::setX2(float x2) {
-    this->xy2=x2;
+    this->xy2 = x2;
 }
 
 void Triangulo::setX3(float x3) {
-    this->xy3=x3;
+    this->xy3 = x3;
 }
 
 void Triangulo::setConjuntoFuzzy(std::vector<std::string> coor) {

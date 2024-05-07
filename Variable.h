@@ -1,8 +1,5 @@
-#ifndef FL_VARIABLE_H
-#define FL_VARIABLE_H
+#pragma once
 
-#include <string>
-#include <vector>
 #include "Termino.h"
 
 class Variable {
@@ -37,5 +34,3 @@ class Variable {
         */
         void fuzificar(float input);
 };
-
-#endif

@@ -1,11 +1,11 @@
-#ifndef TERMINO_H
-#define TERMINO_H
+#pragma once
 
+#include <iostream>
 #include <string>
 #include <vector>
 
 class Termino {
-/* la clas termino es una clase padre, basicamente se refiere a cada conjunto fuzzy o
+/* la clase termino es una clase padre, basicamente se refiere a cada conjunto fuzzy o
     termino linguistico que tenga una variable. En el ejemplo estos son los valores de
     "muy frio", "muy feo", "normal" donde el conjunto puede ser un triangulo o 
     un trapecio
@@ -34,6 +34,4 @@ class Termino {
         virtual std::string getCoordenadas() = 0;
         virtual float calcularPertenencia(float input) = 0 ;
         virtual bool estaDentroDelIntervalo(float input) = 0;
-};        
-
-#endif
+};
