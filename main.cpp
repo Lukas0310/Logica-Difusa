@@ -6,96 +6,68 @@
 #include "Triangulo.h"
 #include "Trapecio.h"
 #include "Regla.h"
+#include "MotorInferencia.h"
 std::vector<Variable*> variables;
 //using namespace std;
 
 int main() {
 
     //declaracion de variables del ejemplo de las diapositivas
-    std::string nVar1 = "Temperatura";
-    std::string dVar1 = "Descripcion de la variable (eliminar de atributos de clase)";
-    float minValVar1 = 110;
-    float maxValVar1 = 330;
-    std::string nFrio = "Frio";
-    std::vector<std::string> cFrio = {"110", "110", "140", "180"};
-    std::string nFresco = "Fresco";
-    std::vector<std::string> cFresco = {"135", "180", "220"};
+    std::string nVar1 = "Sabor";
+    float minValVar1 = 0;
+    float maxValVar1 = 100;
+    std::string nMR = "Muy Rico";
+    std::vector<std::string> cMR = {"80", "100", "100"};
+    std::string nR = "Rico";
+    std::vector<std::string> cR = {"60", "80", "100"};
     std::string nNormal = "Normal";
-    std::vector<std::string> cNormal = {"180", "220", "260"};
-    std::string nTibio = "Tibio";
-    std::vector<std::string> cTibio = {"225", "255", "280"};
-    std::string nCaliente = "Caliente";
-    std::vector<std::string> cCaliente = {"260", "280", "330", "330"};
-    Trapecio* ptrFrio =  new Trapecio(nFrio, cFrio);
-    Trapecio* ptrCaliente = new Trapecio(nCaliente, cCaliente);
-    Triangulo* ptrFresco = new Triangulo(nFresco, cFresco);
-    Triangulo* ptrNormal = new Triangulo(nNormal, cNormal);
-    Triangulo* ptrTibio = new Triangulo(nTibio, cTibio);
+    std::vector<std::string> cNormal = {"40", "60", "80"};
+    std::string nF = "Feo";
+    std::vector<std::string> cF = {"20", "40", "60"};
+    std::string nMF = "Muy Feo";
+    std::vector<std::string> cMF = {"0", "20", "40"};
+    Termino* ptrMR =  new Triangulo(nMR, cMR);
+    Termino* ptrR = new Triangulo(nR, cR);
+    Termino* ptrN = new Triangulo(nNormal, cNormal);
+    Termino* ptrF = new Triangulo(nF, cF);
+    Termino* ptrMF = new Triangulo(nMF, cMF);
     std::vector<Termino*> terminosLing;
-    terminosLing.push_back(ptrFrio);
-    terminosLing.push_back(ptrCaliente);
-    terminosLing.push_back(ptrNormal);
-    terminosLing.push_back(ptrTibio);
-    terminosLing.push_back(ptrFresco);
-    Variable* ptrTemperatura = new Variable(nVar1, dVar1, terminosLing, minValVar1, maxValVar1);
+    terminosLing.push_back(ptrMR);
+    terminosLing.push_back(ptrR);
+    terminosLing.push_back(ptrN);
+    terminosLing.push_back(ptrF);
+    terminosLing.push_back(ptrMF);
+    Variable* ptrSabor = new Variable(nVar1, terminosLing, minValVar1, maxValVar1);
 
-    std::string nVar2 = "Presion";
-    std::string dVar2 = "Descripcion de la variable (eliminar de atributos de clase)";
-    float minValVar2 = 10;
-    float maxValVar2 = 230;
-    std::string nDebil = "Debil";
-    std::vector<std::string> cDebil = {"10", "10", "30", "70"};
-    std::string nBaja = "Baja";
-    std::vector<std::string> cBaja = {"28", "70", "120"};
-    std::string nNormal2 = "Normal";
-    std::vector<std::string> cNormal2 = {"70", "120", "165"};
-    std::string nFuerte = "Fuerte";
-    std::vector<std::string> cFuerte = {"125", "165", "200"};
-    std::string nAlta = "Alta";
-    std::vector<std::string> cAlta = {"165", "200", "230", "230"};
-    Trapecio* ptrDebil =  new Trapecio(nDebil, cDebil);
-    Trapecio* ptrAlta = new Trapecio(nAlta, cAlta);
-    Triangulo* ptrBaja = new Triangulo(nBaja, cBaja);
-    Triangulo* ptrNormal2 = new Triangulo(nNormal2, cNormal2);
-    Triangulo* ptrFuerte = new Triangulo(nFuerte, cFuerte);
+    std::string nVar2 = "Tiempo de Espera";
+    float minValVar2 = 0;
+    float maxValVar2 = 60;
+    std::string nMC = "Muy Corto";
+    std::vector<std::string> cMC = {"0", "0", "5"};
+    std::string nC = "Corto";
+    std::vector<std::string> cC = {"5", "10", "17"};
+    std::string nM = "Mediano";
+    std::vector<std::string> cM = {"15", "22", "27"};
+    std::string nL = "largo";
+    std::vector<std::string> cL = {"27", "30", "45"};
+    std::string nML = "Muy Largo";
+    std::vector<std::string> cML = {"35", "50", "60", "60"};
+    Termino* ptrML =  new Trapecio(nML, cML);
+    Termino* ptrL = new Triangulo(nL, cL);
+    Termino* ptrM = new Triangulo(nM, cM);
+    Termino* ptrC = new Triangulo(nC, cC);
+    Termino* ptrMC = new Triangulo(nMC, cMC);
     std::vector<Termino*> terminosLing2;
-    terminosLing2.push_back(ptrDebil);
-    terminosLing2.push_back(ptrAlta);
-    terminosLing2.push_back(ptrBaja);
-    terminosLing2.push_back(ptrNormal2);
-    terminosLing2.push_back(ptrFuerte);
-    Variable* ptrPresion = new Variable(nVar2, dVar2, terminosLing2, minValVar2, maxValVar2);
+    terminosLing2.push_back(ptrML);
+    terminosLing2.push_back(ptrL);
+    terminosLing2.push_back(ptrM);
+    terminosLing2.push_back(ptrC);
+    terminosLing2.push_back(ptrMC);
+    Variable* ptrTiempoEspera = new Variable(nVar2, terminosLing2, minValVar2, maxValVar2);
 
-    variables.push_back(ptrTemperatura);
-    variables.push_back(ptrPresion);
+    variables.push_back(ptrSabor);
+    variables.push_back(ptrTiempoEspera);
     
-    /*
-    R1: SI (sabor es muy feo Y espera es muy largo) ENTONCES (propina baja)​
-    R2: SI (sabor es muy feo Y espera es corto) ENTONCES (propina normal)​
-    R3: SI (sabor es muy feo Y espera es muy corto) ENTONCES (propina normal)​
-    R4: SI (sabor es muy feo Y espera es medio) ENTONCES (propina baja)​
-    R5: SI (sabor es muy feo Y espera es largo) ENTONCES (propina baja)​
-    R6: SI (sabor es feo  Y espera es muy corto) ENTONCES (propina normal)​
-    R7: SI (sabor es feo  Y espera es corto) ENTONCES (propina normal)​
-    R8: SI (sabor es feo  Y espera es medio) ENTONCES (propina baja)​
-    R9: SI (sabor es feo  Y espera es largo) ENTONCES (propina baja)​
-    R10: SI (sabor es feo  Y espera es muy largo) ENTONCES (propina baja)​
-    R11: SI (sabor es normal Y espera es muy corto) ENTONCES (propina alta)​
-    R12: SI (sabor es normal Y espera es corto) ENTONCES (propina normal)​
-    R13: SI (sabor es normal Y espera es medio) ENTONCES (propina normal)​
-    R14: SI (sabor es normal Y espera es alta) ENTONCES (propina normal)​
-    R15: SI (sabor es normal Y espera es muy alto) ENTONCES (propina baja)​
-    R16: SI (sabor es rico Y espera es muy corto) ENTONCES (propina alta)​
-    R17: SI (sabor es rico Y espera es corto) ENTONCES (propina alta)​
-    R18: SI (sabor es rico Y espera es medio) ENTONCES (propina alta)​
-    R19: SI (sabor es rico Y espera es alta) ENTONCES (propina normal)​
-    R20: SI (sabor es rico Y espera es muy alta) ENTONCES (propina baja)​
-    R21: SI (sabor es muy rico Y espera es muy corto) ENTONCES (propina alta)​
-    R22: SI (sabor es muy rico Y espera es corto) ENTONCES (propina alta)​
-    R23: SI (sabor es muy rico Y espera es medio) ENTONCES (propina alta)​
-    R24: SI (sabor es muy rico Y espera es larga) ENTONCES (propina normal)​
-    R25: SI (sabor es muy rico Y espera es muy larga) ENTONCES (propina normal)​
-    */
 
    //declaracion de reglas
     std::vector<Regla*> reglas;
@@ -251,10 +223,53 @@ int main() {
     reglas.push_back(ptrRegla24);
     reglas.push_back(ptrRegla25);
 
-    
+    //declaracion de la variable de salida
+    std::string nVar3 = "Calidad";
+    float minValVar3 = 0;
+    float maxValVar3 = 100;
+    std::string nBaja = "Baja";
+    std::vector<std::string> cBaja = {"0", "5", "10"};
+    std::string sNormal = "Normal";
+    std::vector<std::string> cNormal2 = {"8", "15", "27"};
+    std::string nAlta = "Alta";
+    std::vector<std::string> cAlta = {"20", "30", "90", "100"};
+    Termino* ptrBaja =  new Triangulo(nBaja, cBaja);
+    Termino* ptrNormal = new Triangulo(sNormal, cNormal2);
+    Termino* ptrAlta = new Trapecio(nAlta, cAlta);
+    std::vector<Termino*> terminosLing3;
+    terminosLing3.push_back(ptrBaja);
+    terminosLing3.push_back(ptrNormal);
+    terminosLing3.push_back(ptrAlta);
+    Variable* ptrCalidad = new Variable(nVar3, terminosLing3, minValVar3, maxValVar3);
 
+    //entrada de valores
+    float sabor = 75;
+    float tiempoEspera = 8;
 
-    
+    //fusificacion para sabor
+    for (int i = 0; i < variables.size(); i++) {
+        if (variables[i]->getNombre() == "Sabor") {
+            variables[i]->fuzificar(sabor);
+        }
+    }
+
+    //fusificacion para tiempo de espera
+    for (int i = 0; i < variables.size(); i++) {
+        if (variables[i]->getNombre() == "Tiempo de Espera") {
+            variables[i]->fuzificar(tiempoEspera);
+        }
+    }
+
+    //declaracion del motor de inferencia
+    MotorInferencia* motor = new MotorInferencia(reglas, variables, ptrCalidad);
+
+    //inferencia
+    motor->inferir();
+
+    //defuzificacion
+    float paso = 0.01;
+    float calidad = motor->defuzzificar(paso);
+
 
     return 0;
 }

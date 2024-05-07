@@ -6,29 +6,35 @@
 #include "Termino.h"
 
 class Variable {
+    //la clase variable aloja las variables que vayamos a usar para recibir input y calcular el output
     private:
         std::string nombre;
-        std::string descripcion;
         std::vector<Termino*> terminos;
         float valor;
         float minimo, maximo;
+        /* tiene un nombre, los terminos linguisticos de tipo Termino alojados en un vector y un rango de valores
+        */
 
     public:
-        Variable(std::string n, std::string d, std::vector<Termino*> t, float minval, float maxval);
+        //constructor y setters y getters
+        Variable(std::string n, std::vector<Termino*> t, float minval, float maxval);
         void setNombre(std::string n);
-        void setDescripcion(std::string d);
         void setTerminos(const std::vector<Termino*>& ts);
         void setMinimo(float m);
         void setMaximo(float m);
         void setValor(float v);
         std::string getNombre();
-        std::string getDescripcion();
         std::vector<Termino*> getTerminos();
         float getMinimo();
         float getMaximo();
         float getValor();
         void nuevoTermino(Termino* t);
         bool getTermino(std::string nombreTermino);
+        /* fuzificar hace parte de la clase variable porque calcula el grado de pertenencia
+            del valor input para cada término linguistico. Es decir si ingreso temp = 80 entonces
+            calculo el grado de pertenencia de 80 para cada conjunto fuzzy (termino linguistico)
+            dentro del vector de terminos de esta variable
+        */
         void fuzificar(float input);
 };
 
