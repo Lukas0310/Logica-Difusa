@@ -1,7 +1,6 @@
 /* 
 Clase que realiza la inferencia difusa.
 las reglas estan compuestas de dos entradas y una salida
-la representacion de las reglas es en una matriz.
 */
 
 #ifndef MOTORINFERENCIA_H
@@ -34,7 +33,10 @@ class MotorInferencia {
         void inferir();
 
         //defuzzificacion
-        float defuzzificar();
+        float defuzzificar(float x);
+
+        //obtiene el mayor u de un conjunto de terminos
+        float getMayorU(float x);
 
 
 };

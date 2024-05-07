@@ -3,6 +3,7 @@
 #include "Variable.h"
 #include "Regla.h"
 #include "MotorInferencia.h"
+#include "Termino.h"
 
 MotorInferencia::MotorInferencia(std::vector<Regla*> r, std::vector<Variable*> v) {
     reglas = r;
@@ -52,11 +53,32 @@ void MotorInferencia::inferir() {
             }
         }
     }
-    //aca debe ir el for para iterar en Variable* salida para ir construyendo los puntos
-    
 }
 
+//Funcion que recibe un x y retorna el u mas alto de los terminos de salida
+float MotorInferencia::getMayorU(float x) {
+    float mayor = 0;
+    for (int i = 0; i < salida->getTerminos().size(); i++) {
+        if (salida->getTerminos()[i]->estaDentroDelIntervalo(x) && salida->getTerminos()[i]->getAltura() > 0) {
+            float pertenencia = salida->getTerminos()[i]->calcularPertenencia(x);
+            if (pertenencia <= salida->getTerminos()[i]->getAltura() && pertenencia > mayor) {
+                mayor = pertenencia;
+            }
+        }
+    }
+    return mayor;
+}
+                
 /*
 metodo para realizar la defuzzificacion.
 Utiliza el metodo del centroide para obtener el valor de salida.
 */
+float MotorInferencia::defuzzificar(float paso) {
+    float numerador = 0;
+    float denominador = 0;
+    for (int i = salida->getMinimo(); i <= salida->getMaximo(); i += paso) {
+        numerador += i * getMayorU(i);
+        denominador += getMayorU(i);
+    }
+    return numerador / denominador;
+}        
