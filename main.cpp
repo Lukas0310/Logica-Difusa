@@ -5,13 +5,27 @@
 #include "Variable.h"
 #include "Triangulo.h"
 #include "Trapecio.h"
-
+std::vector<Variable*> variables;
 //using namespace std;
 
 int main() {
-
-
-    std::cout << "Hello world!" << std::endl;
+    std::string nVar1 = "Temperatura";
+    //std::string dVar1 = "Descripcion de la variable (eliminar de atributos de clase)";
+    float minValVar1 = 110;
+    float maxValVar1 = 330;
+    std::string nFrio = "Frio";
+    std::vector<std::string> cFrio = {"110", "110", "140", "180"};
+    std::string nFresco = "Fresco";
+    std::vector<std::string> cFresco = {"135", "180", "220"};
+    std::string nFrio = "Normal";
+    std::vector<std::string> cNormal = {"180", "220", "260"};
+    std::string nFrio = "Tibio";
+    std::vector<std::string> cTibio = {"225", "255", "280"};
+    std::string nFrio = "Caliente";
+    std::vector<std::string> cCaliente = {"260", "280", "330", "330"};
+    
+    
+    Variable* ejemploVar1 = new Variable();
     std::vector<std::string> c1 ={"0", "20","43"};
     std::string n1 = "Lluvia";
     Triangulo* ptrTr1 = new Triangulo(n1, c1);
