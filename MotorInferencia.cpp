@@ -1,3 +1,4 @@
+#include <iostream>
 #include <vector>
 #include <string>
 #include "Variable.h"
@@ -5,9 +6,12 @@
 #include "MotorInferencia.h"
 #include "Termino.h"
 
-MotorInferencia::MotorInferencia(std::vector<Regla*> r, std::vector<Variable*> v) {
+using namespace std;
+
+MotorInferencia::MotorInferencia(std::vector<Regla*> r, std::vector<Variable*> v, Variable* s) {
     reglas = r;
     variables = v;
+    salida = s;
 }
 
 //metodo para establecer los valores de inferencia de las reglas: ej: (velocidad alta -> frenar) -> (0.8 -> frenar)
@@ -30,6 +34,7 @@ void MotorInferencia::setValoresInferencia() {
                 }
             }
         }
+        cout<<"Estableciendo valor de inferencia: "<<reglas[i]->getValorInferencia()<<" -> "<<reglas[i]->getConsecuencia()<<endl;
         reglas[i]->setValorInferencia(minimo);
     }
 }
@@ -41,6 +46,7 @@ Si en las acciones ya se establecio el punto de corte y se encuentra un nuevo va
 para esa accion, se elige el valor mas alto.
 */
 void MotorInferencia::inferir() {
+    cout<<"----- Iniciando Inferencia: -----"<<endl;
     setValoresInferencia();
     for (int i = 0; i < reglas.size(); i++) {
         float valorInferencia = reglas[i]->getValorInferencia();
@@ -48,6 +54,7 @@ void MotorInferencia::inferir() {
         for (int j = 0; j < salida->getTerminos().size(); j++) {
             if (salida->getTerminos()[j]->getNombre() == nombreConsecuente) {
                 if (salida->getTerminos()[j]->getAltura() < valorInferencia) {
+                    cout<<"Estableciendo altura en termino de salida: "<<salida->getTerminos()[j]->getNombre()<<" = "<<valorInferencia<<endl;
                     salida->getTerminos()[j]->setAltura(valorInferencia);
                 }
             }
@@ -74,11 +81,13 @@ metodo para realizar la defuzzificacion.
 Utiliza el metodo del centroide para obtener el valor de salida.
 */
 float MotorInferencia::defuzzificar(float paso) {
+    cout<<"----- Iniciando Defuzzificacion: -----"<<endl;
     float numerador = 0;
     float denominador = 0;
     for (int i = salida->getMinimo(); i <= salida->getMaximo(); i += paso) {
         numerador += i * getMayorU(i);
         denominador += getMayorU(i);
     }
+    cout<<"Valor de salida: "<<numerador / denominador<<endl;
     return numerador / denominador;
 }        

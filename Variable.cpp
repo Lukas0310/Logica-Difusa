@@ -4,6 +4,8 @@
 #include "Variable.h"
 #include <iostream>
 
+using namespace std;
+
 Variable::Variable(std::string n, std::string d, std::vector<Termino*> t, float minval, float maxval){
     nombre=n;
     descripcion=d;
@@ -65,7 +67,6 @@ void Variable::nuevoTermino(Termino* t){
 };
 
 bool Variable::getTermino(std::string nombreTermino){
-    //std::vector<Termino*>::iterator itT;
     for (int i=0;i<terminos.size();i++){
         if(terminos[i]->getNombre()==nombreTermino) {
             return true;
@@ -75,23 +76,9 @@ bool Variable::getTermino(std::string nombreTermino){
 };
 
 void Variable::fuzificar(float input){
-    /*
-    fuzificar es importante
-    los pasos son
-    crear un float de referencia
-    hacer un for que recorre cada termino
-    en cada termino va a revisar que el input cuanto pertenece
-    if pert = 0, pues nada continue
-    if pert no es ninguna de los anteriores, lo compara con el floatRef y si es mayor lo cambia por ese valor
-    tambien guarda el termino como un apuntador al termino temporal
-    recuerda, debes redirigir el apuntador al termino que sea mayor
-    por ultimo retorna el termino que haya tenido mayor pertenencia
-    */
-
-    //float fRef = 0.0;
-    //Termino* ttemp = nullptr;
+    cout<<"Fuzificando variable: "<<nombre<<endl;
     for (int i=0;i<terminos.size();i++) {
-        std::cout<<"Termino: "<<terminos[i]->getNombre();
+        std::cout<<"Termino: "<<terminos[i]->getNombre()<<std::endl;
         float pert = terminos[i]->calcularPertenencia(input);
         std::cout<<"   Pertenencia:  "<<pert<<std::endl;
         terminos[i]->setPertenencia(pert);

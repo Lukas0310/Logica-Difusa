@@ -19,12 +19,10 @@ class MotorInferencia {
         std::vector<Variable*> variables;
         //representa la variable que contiene las acciones a realizar despues de la inferencia
         Variable* salida;
-        //puntos en el plano qeu representan la grafica/conjunto a defuzzificar
-        std::vector<std::tuple<float, float>> puntos;
 
     public:
         //constructor
-        MotorInferencia(std::vector<Regla*> r, std::vector<Variable*> v);
+        MotorInferencia(std::vector<Regla*> r, std::vector<Variable*> v, Variable* s);
         
         //metodo para establecer los valores de inferencia de las reglas: ej: (velocidad alta -> frenar) -> (0.8 -> frenar)
         void setValoresInferencia();
